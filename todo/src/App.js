@@ -14,6 +14,9 @@ function App () {
 
   return(
     <div>
+      <div>
+        <h1>What should we do today?</h1>
+      </div>
       <TodoForm addTask={addTask} clearCompleted={clearCompleted} />
       <TodoList tasks={state.tasks} toggleTask={toggleTask} />
     </div>

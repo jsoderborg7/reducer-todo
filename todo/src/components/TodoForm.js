@@ -1,41 +1,38 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 
-class TodoForm extends React.Component{
-  constructor(){
-    super();
-    this.state = { task: "" };
-  }	
-     
-  todoChangeHandler = event => {
-    this.setState({[event.target.name]: event.target.value});
-  };
+const TodoForm = ({addTask, clearCompleted}) =>{
+  const [task, setTask] = useState('');
 
-  submitChange = event =>{
-    event.preventDefault();
-    this.props.addTask(this.state.task);
-  };
-
-  removeItem = event =>{
-    event.preventDefault();
-    this.props.clearComplete(this.state.task);
-  };
-
-  render(){
-    return (
-
-        <div className="formContainer">
-          <form onSubmit={this.submitChange}>
-            <input className="inputBox" type="text" value={this.state.task} name="task" placeholder="Add task" onChange={this.todoChangeHandler} />
-            <div className="buttons">
-              <button onChange={this.todoChangeHandler}>Add Task</button>
-              <button onClick={this.removeItem}>Clear Completed</button>
-            </div>
-          </form>
-        </div>
-
-    );
+  const handleChange = e =>{
+    e.preventDefault();
+    setTask(e.target.value);
   }
+     
+  const handleSubmit = e =>{
+    e.preventDefault();
+    addTask(task);
+    setTask('');
+  };
+
+  const handleClearComplete = e =>{
+    e.preventDefault();
+    clearCompleted();
+  };
+
+  return(
+    <form onSubmit={handleSubmit}>
+      <input 
+        type= 'text'
+        placeholder= 'Add task'
+        name = 'input'
+        onChange= {handleChange}
+        value= {task}
+      />
+      <button type= 'submit'>Add task</button> 
+      <button onClick= {handleClearComplete}>Clear Completed</button>
+    </form>
+  )
 }
 
 export default TodoForm;

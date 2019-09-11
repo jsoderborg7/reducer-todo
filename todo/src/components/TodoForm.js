@@ -3,11 +3,6 @@ import React, {useState} from 'react';
 
 const TodoForm = ({addTask, clearCompleted}) =>{
   const [task, setTask] = useState('');
-
-  const handleChange = e =>{
-    e.preventDefault();
-    setTask(e.target.value);
-  }
      
   const handleSubmit = e =>{
     e.preventDefault();
@@ -23,10 +18,11 @@ const TodoForm = ({addTask, clearCompleted}) =>{
   return(
     <form onSubmit={handleSubmit}>
       <input 
+        
         type= 'text'
         placeholder= 'Add task'
         name = 'input'
-        onChange= {handleChange}
+        onChange= {e => setTask(e.target.value)}
         value= {task}
       />
       <button type= 'submit'>Add task</button> 

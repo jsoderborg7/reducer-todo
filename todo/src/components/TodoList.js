@@ -14,7 +14,6 @@ const TodoList = ({toggleTask, tasks}) =>{
             toggleTask={toggleTask}/>
           ))}
       </div>
-
   );  
 };
 

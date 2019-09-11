@@ -8,7 +8,7 @@ import TodoForm from './components/TodoForm';
 function App () {
   
   const [state, dispatch] = useReducer(todoReducer, initialState);
-  const addTask = item => dispatch({type: 'ADD_TASK', payload: item});
+  const addTask = task => dispatch({type: 'ADD_TASK', payload: task});
   const clearCompleted = () => dispatch({type: 'CLEAR_COMPLETED'});
   const toggleTask = id => dispatch({type: 'TOGGLE_TODO', payload: id});
 

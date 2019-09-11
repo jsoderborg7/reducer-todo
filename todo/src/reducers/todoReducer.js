@@ -1,14 +1,16 @@
 export const initialState = {
-  tasks:[{
-    item: 'Learn about reducers',
-    completed: false,
-    id: 3892987589
-  },
-  {
-    item: "Clean car",  
-    completed: false,
-    id: 3782457624
-  }]
+  tasks:[
+  //   {
+  //   item: 'Learn about reducers',
+  //   completed: false,
+  //   id: 3892987589
+  // },
+  // {
+  //   item: "Clean car",  
+  //   completed: false,
+  //   id: 3782457624
+  // }
+]
 }
 
 export const todoReducer = (state, action) =>{
@@ -31,7 +33,7 @@ export const todoReducer = (state, action) =>{
       return {
         tasks: state.tasks.filter(({completed}) => !completed)
       };
-      
+
     default:
       return state;
   } 

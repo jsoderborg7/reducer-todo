@@ -13,12 +13,14 @@ function App () {
   const toggleTask = id => dispatch({type: 'TOGGLE_TODO', payload: id});
 
   return(
-    <div>
-      <div>
-        <h1>What should we do today?</h1>
+    <div className="App">
+      <div className="appContainer">
+        <div className="appTitle">
+          <h1>Stuff To Do</h1>
+        </div>
+        <TodoList tasks={state.tasks} toggleTask={toggleTask} />
+        <TodoForm addTask={addTask} clearCompleted={clearCompleted} />
       </div>
-      <TodoForm addTask={addTask} clearCompleted={clearCompleted} />
-      <TodoList tasks={state.tasks} toggleTask={toggleTask} />
     </div>
   )
 }

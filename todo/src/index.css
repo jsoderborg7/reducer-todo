@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  font-family: 'Hi Melody', cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 62.5%;
+  box-sizing: border-box;
+  background-image: url(john-westrock-7Q-x0TH6z4w-unsplash.jpg);
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
